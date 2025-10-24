@@ -1,6 +1,7 @@
 package com.example.questadvancelayout_094
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,7 +28,8 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ActivitasPertama(modifier: Modifier){
-    Column(modifier = Modifier.padding(top=100.dp)
+    Column(modifier = Modifier
+        .padding(top=100.dp)
         .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
@@ -49,6 +51,7 @@ fun ActivitasPertama(modifier: Modifier){
                     painter = gambar,
                     contentDescription = null,
                     modifier = Modifier.size(100.dp).padding(5.dp)
+
                 )
                 Spacer(modifier = Modifier.width(30.dp))
                 Column(){
@@ -68,6 +71,60 @@ fun ActivitasPertama(modifier: Modifier){
                 }
             }
         }
+        //column2
+        Column(
+            modifier = Modifier
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth(1f)
+                    .padding(12.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = Color.Blue
+                )
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically, // biar logo sejajar tengah dgn teks
+
+                ) {
+                    val gambar = painterResource(R.drawable.logoumy)
+                    Image(
+                        painter = gambar,
+                        contentDescription = null,
+                        modifier = Modifier.size(100.dp).padding(5.dp)
+
+                    )
+                    Spacer(modifier = Modifier.width(30.dp))
+                    Column() {
+                        Text(
+                            stringResource(R.string.nama),
+                            fontSize = 25.sp,
+                            fontFamily = FontFamily.Serif,
+                            color = Color.White,
+                            modifier = Modifier.padding(top = 15.dp)
+                        )
+                        Text(
+                            stringResource(R.string.nohp),
+                            fontSize = 20.sp,
+                            fontFamily = FontFamily.Serif,
+                            color = Color(0xFF4FC3F7),
+                            modifier = Modifier.padding(top = 15.dp)
+                        )
+                        Text(
+                            stringResource(R.string.alamat),
+                            fontSize = 20.sp,
+                            color = Color.Yellow,
+                            modifier = Modifier.padding(top = 15.dp, bottom = 10.dp)
+                        )
+                    }
+                }
+            }
+
+
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -81,4 +138,5 @@ fun ActivitasPertama(modifier: Modifier){
         }
 
     }
+}
 }
